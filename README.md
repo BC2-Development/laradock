@@ -54,3 +54,10 @@ location /project2 {
 docker-compose down
 docker-compose up -d nginx
 ```
+
+
+## Troubleshooting
+
+If at any point you encounter any permission error in the docker. Go to `docker-compose exec workspace bash`, then change EVERY FILE owner to laradock:laradock
+
+`chown -R laradock:laradock /var/www/*`
