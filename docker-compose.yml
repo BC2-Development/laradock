@@ -840,11 +840,11 @@ services:
 ### MeiliSearch ##########################################
     meilisearch:
       image: getmeili/meilisearch:latest
-      volumes: 
+      volumes:
         - ${DATA_PATH_HOST}/meilisearch:/var/lib/meilisearch
-      ports: 
+      ports:
         - "${MEILISEARCH_HOST_PORT}:7700"
-      networks: 
+      networks:
         - frontend
         - backend
 
@@ -933,8 +933,8 @@ services:
         - ./data/certbot/certs/:/var/certs
         - ./certbot/letsencrypt/:/var/www/letsencrypt
       environment:
-        - CN="fake.domain.com"
-        - EMAIL="fake.email@gmail.com"
+        - CN="backend.slt3.com.au"
+        - EMAIL="dev@bluefit.com.au"
       networks:
         - frontend
 
@@ -1363,7 +1363,7 @@ services:
     docker-in-docker:
       image: docker:19.03-dind
       environment:
-        DOCKER_TLS_SAN: DNS:docker-in-docker      
+        DOCKER_TLS_SAN: DNS:docker-in-docker
       privileged: true
       volumes:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
