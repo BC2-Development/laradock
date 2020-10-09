@@ -2,7 +2,7 @@
 
 ## Step to setup certbot:
 
-1. - Edit the laradock/nginx/sites/default.conf (may or may not be useful)
+1. - Edit the laradock/nginx/sites/default.conf (may or may not be useful, in our case it works without changing the path)
 a - root /var/www/public; to root /var/www;
 
 2. - Edit the laradock/docker-compose.yml
@@ -18,7 +18,7 @@ b - Update certbot `docker-compose.yml` to the correct email and domain
 
 4. - docker-compose logs certbot
 
-5. Correct the conf file to enable 443 ssl and private keys:
+5. Correct the nginx conf file to enable 443 ssl and private keys:
 
 ```
 listen 80;
